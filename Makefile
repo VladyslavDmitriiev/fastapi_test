@@ -6,4 +6,13 @@ init:
 	test -d .git || git init
 	test -e .gitignore || echo "env/" > .gitignore
 
+env:
+	python3 -m venv env
+
+install:
+	pip install -r requirements.txt
+
+server:
+	uvicorn main:app --reload
+
 .PHONY: init

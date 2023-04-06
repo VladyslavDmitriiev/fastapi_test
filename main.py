@@ -21,3 +21,22 @@ def get_todo(todo_id: int):
 @app.get("/todos")
 def get_todos(limit: int, offset: int):
     return fake_todos[offset:][:limit]
+
+
+@app.post("/todo/{todo_id}")
+def update_todo(todo_id: int, title: str | None = None, details: str | None = None):
+    todo = list(filter(lambda todo: todo.get("todo_id") == todo_id, fake_todos))[0]
+    if title:
+        todo["title"] = title
+    if details:
+        todo["details"] = details 
+    return todo
+
+
+import uuid
+
+# generate a random UUID
+my_uuid = uuid.uuid4()
+
+# print the UUID as a string
+print(str(my_uuid))
