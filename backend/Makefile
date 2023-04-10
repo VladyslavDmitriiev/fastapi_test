@@ -7,12 +7,12 @@ init:
 	test -e .gitignore || echo "env/" > .gitignore
 
 env:
-	python3 -m venv env
+	python3 -m venv .venv
 
 install:
 	pip install -r requirements.txt
 
 server:
-	uvicorn main:app --reload
+	uvicorn src.server:api --reload
 
 .PHONY: init
