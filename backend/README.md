@@ -1,4 +1,6 @@
+
+
+Create revision
 ```bash
-pip install "fastapi[all]"
-uvicorn main:app --reload
+alembic revision --autogenerate -m "commit message"
 ```

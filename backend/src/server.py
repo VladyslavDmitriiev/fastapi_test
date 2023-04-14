@@ -1,7 +1,7 @@
 from typing import Annotated, List
 from fastapi import FastAPI, Query
 from pydantic import BaseModel, Field
-from src.api.models.todo import Todo
+from src.api.schemas.todo import Todo
 import uuid
 
 
